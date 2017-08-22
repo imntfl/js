@@ -1,0 +1,48 @@
+<html lang="ru">
+<head>
+    <title>Комментарии</title>
+    <meta charset="utf-8">
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 iss">
+                <form role="form" method="post" action="javascript:void(null);" onsubmit="es()" name="form">
+                    <div class="input-group">
+                        <span class="input-group-addon">Имя</span>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Тема</span>
+                        <input type="text" class="form-control" name="theme">
+                    </div>
+  <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder="Комменатрий" id="coment" name="content"></textarea>
+  </div>
+                    <input type="submit" value="Отправить">
+</form>
+            
+    
+	<% for (var i = 0;i < global.post.length;i++) { %>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%=global.post[i].name%></h3> - <%=global.post[i].theme%>
+        </div>
+        <div class="panel-body">
+            <%=global.post[i].content%>
+        </div>
+        <div class="panel-footer"><%=global.time[i].time%></div>
+        </div>
+    <% } %>
+                </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
